@@ -12,17 +12,28 @@ constructor(private movieservice:MovieApiService){}
 
 
 bannerResult:any=[];
+trendingMovieResult:any=[];
 
 ngOnInit():void{
+  this.bannerData();
+  this.trendingData();
 }
 bannerData(){
   this.movieservice.bannerApiData()
   .subscribe((response)=>
   {
-console.log(response,'bannerresult#');
-this.bannerResult=response.results;
-},
+    console.log(response,'bannerresult#');
+    this.bannerResult=response.results;
+});
+}
 
-  );
+trendingData(){
+  this.movieservice.trendingMovieApiData()
+  .subscribe(result=>{
+    console.log(result, 'trendingresult#');  
+    this.trendingMovieResult = result.results;
+
+  })
 }
 }
+

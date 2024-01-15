@@ -7,6 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'Netflix';
+  
   navbackground:any;
 
   @HostListener('document:scroll')

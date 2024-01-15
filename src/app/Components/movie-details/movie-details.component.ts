@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MovieApiService } from 'src/app/Services/movie-api.service';
 
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent {
+export class MovieDetailsComponent implements OnInit{
+  constructor(private service:MovieApiService, private router:ActivatedRoute){}
 
+  getMovieDetailResult:any;
+  ngOnInit(){
+    let getParamId=this.router.snapshot.paramMap.get('id');
+    console.log(getParamId,'getparamid#');
+    
+this.getMovie(getParamId);
+  }
+
+  getMovie(id:any){
+this.service.getmovieDetails(id).subscribe((result)=>
+{
+  console.log(result,'getmoviedetails#');
+  this.getMovieDetailResult=result;
+  
+});
+  }
 }
