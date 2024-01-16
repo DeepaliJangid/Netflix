@@ -25,12 +25,50 @@ export class MovieApiService {
 
  getsearchMovie(data:any):Observable<any>
  {
-return this.http.get(`${this.baseUrl}/search/movie?api_key=${this.apikey}&query=${data.query}`);
+return this.http.get(`${this.baseUrl}/search/movie?api_key=${this.apikey}&query=${data.movieName}`);
  }
 
  getmovieDetails(data:any):Observable<any>
  {
-  return this.http.get(`${this.baseUrl}/movie/{data}?api_key=${this.apikey}`);
+  return this.http.get(`${this.baseUrl}/movie/${data}?api_key=${this.apikey}`);
  }
 
+ getMovieVideo(data:any):Observable<any>
+ {
+  return this.http.get(`${this.baseUrl}/movie/${data}/videos?api_key=${this.apikey}`);
+ }
+
+ getMovieCast(data:any):Observable<any>
+ {
+  return this.http.get(`${this.baseUrl}/movie/${data}/credits?api_key=${this.apikey}`); 
+ }
+
+ fetchActionMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=28`)
+ }
+
+ 
+ fetchAdventureMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=12`)
+ }
+
+ fetchAnimationMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=16`)
+ }
+
+ fetchComedyMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=35`)
+ }
+
+ fetchDocumentaryMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=99`)
+ }
+ fetchScifiMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=878`)
+ }
+
+ fetchThrillerMovies():Observable<any>{
+  return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apikey}&with_genres=53`)
+  
+ }
 }

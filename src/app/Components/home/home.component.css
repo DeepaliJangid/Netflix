@@ -1,20 +1,15 @@
-.carousel-inner
-{
+.carousel-inner{
     height: 700px;
 }
-.carousel-inner .carousel-item
-img
-{
+.carousel-inner .carousel-item img{
     height: 700px;
-    object-fit:cover ;
+    object-fit: cover;
 }
-.carousel-caption h2
-{
+.carousel-caption h2{
     color: #E50914;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
 }
-
 .carousel-caption p{
     color: #ffffff;
 }
@@ -24,24 +19,20 @@ img
     overflow-x: scroll;
 }
 .rowimg{
-    max-height:200px ;
+    max-height: 200px;
     object-fit: contain;
-    width:100% ;
+    width: 100%;
     box-sizing: content-box;
     transition: transform 450ms;
     margin-right: 7px;
 }
-
-.rowimg.hover{
-transform: scale(2);
-cursor: pointer;
+.rowimg:hover{
+    transform: scale(1.10);
+    cursor: pointer;
 }
 .largeposter{
     max-height: 300px;
-
 }
-
-.rowposter ::-webkit-scrollbar
-{
-    display:none;
+.rowposter::-webkit-scrollbar{
+    display: none;
 }

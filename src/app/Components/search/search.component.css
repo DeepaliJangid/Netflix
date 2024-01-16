@@ -1,4 +1,4 @@
-button{
+/* button{
     background-color:red ;
     color: #ffffff;
 }
@@ -8,6 +8,23 @@ button.hover{
 }
 img{
     width:100%;
+}
+h1{
+    color: #ffffff;
+} */
+
+button{
+    background-color: #E50914;
+    color: #ffffff;
+}
+ 
+button:hover{
+    background-color: #E50914;
+    color: #ffffff;
+}
+img{
+    width: 100%;
+    cursor: pointer;
 }
 h1{
     color: #ffffff;
